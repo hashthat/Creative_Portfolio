@@ -19,7 +19,7 @@ const nextConfig = {
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@App': path.resolve(__dirname, 'src'),
+      '@': path.resolve(__dirname, 'src'),
       'lib': path.resolve(__dirname, 'common'),
     };
     return config;

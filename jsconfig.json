@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@App/*": ["./src/*"],   // Matches Webpack alias
+      "@/*": ["./src/*"],   // Matches Webpack alias
       "lib/*": ["./common/*"]  // Matches Webpack alias
     }
   }
