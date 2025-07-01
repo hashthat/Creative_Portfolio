@@ -7,7 +7,7 @@ import Navigation from "./components/navigation";
 // Dynamically import the RenderModel component to avoid SSR issues
 // const RenderModel = dynamic(() => import('./components/RenderModel'), {
 //  ssr: false,
-});
+// });
 // This is the main page of the Next.js application.
 export default function Home() {
   return (
