@@ -12,11 +12,16 @@ const nextConfig = {
   output: "export",
   basePath: isProd ? `/${repoName}` : '',
   assetPrefix: isProd ? `/${repoName}/` : '',
-  reactStrictMode: false, // Disabled to prevent double-loading
+  reactStrictMode: false,
   images: {
     unoptimized: true,
   },
   trailingSlash: true,
+  
+  // For static file serving in production
+  env: {
+    ASSET_PREFIX: isProd ? `/${repoName}/` : '',
+  },
 
   webpack: (config) => {
     config.resolve.alias = {
@@ -25,6 +30,7 @@ const nextConfig = {
       'lib': path.resolve(__dirname, 'common'),
       'three': path.resolve(__dirname, 'node_modules/three'),
     };
+    
     return config;
   },
 };
