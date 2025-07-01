@@ -4,8 +4,15 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 // Use absolute path from public folder
-const MODEL_PATH = '/models/An_anime_style_young__0630024801_texture-transformed.glb'
+const MODEL_PATH = `${
+  process.env.NODE_ENV === 'production' 
+    ? '/Creative_Portfolio/models' 
+    : '/models'
+}/An_anime_style_young__0630024801_texture-transformed.glb`;
 
+// Use this path for both:
+useGLTF(MODEL_PATH);
+useGLTF.preload(MODEL_PATH);
 export default function Wizard(props) {
     const { nodes } = useGLTF(MODEL_PATH)
     const modelRef = useRef()
