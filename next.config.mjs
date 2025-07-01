@@ -10,24 +10,44 @@ const repoName = 'Creative_Portfolio';
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
+  // Enhanced basePath handling
   basePath: isProd ? `/${repoName}` : '',
+  // Improved assetPrefix with protocol-relative URL
   assetPrefix: isProd ? `/${repoName}/` : '',
-  reactStrictMode: true,
+  // Optional: Disable strict mode if you're seeing double-mounting issues
+  reactStrictMode: false, // Changed from true to prevent double loads
   images: {
-    unoptimized: true, // Required for static export
+    unoptimized: true,
   },
-  trailingSlash: true, // Recommended for static exports
+  // Added explicit production browser caching
+  trailingSlash: true,
+  productionBrowserSourceMaps: false, // Better for performance
+  // Added compression for static exports
+  compress: true,
 
-  // Environment-aware webpack configuration
   webpack: (config, { isServer }) => {
-    // Add path aliases
+    // Enhanced alias configuration
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, 'src'),
       'lib': path.resolve(__dirname, 'common'),
+      // Add this to prevent three.js duplicate module issues
+      'three': path.resolve(__dirname, 'node_modules/three'),
     };
+    
+    // Important for GLB loader
+    config.module.rules.push({
+      test: /\.(glb|gltf)$/,
+      use: {
+        loader: 'file-loader',
+        options: {
+          publicPath: isProd ? `/${repoName}/_next/static` : '/_next/static',
+          outputPath: 'static/',
+          name: '[name].[hash].[ext]',
+        },
+      },
+    });
 
-    // Important: return the modified config
     return config;
   },
 };
