@@ -87,6 +87,13 @@ export const projectsData = [
     date: "2022-02-14",
     demoLink: "https://quickcutslawn.github.io/",
   },
+  {
+    id: 11,
+    name: "FakeAD_Detect",
+    description: "Detect fake ads in social media posts",
+    date: "2022-08-15",
+    demoLink: "https://github.com/hashthat/FakeAD_Detect",
+  },
 ];
 
 export const BtnList = [
