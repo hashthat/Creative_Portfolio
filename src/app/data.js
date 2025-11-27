@@ -94,6 +94,13 @@ export const projectsData = [
     date: "2022-08-15",
     demoLink: "https://hashthat.github.io/FakeAd_App/?page=home",
   },
+  {
+    id: 12,
+    name: "oal_datawarehouse",
+    description: "Data warehouse for OAL project",
+    date: "2022-08-15",
+    demoLink: "https://github.com/hashthat/oal_datawarehouse",
+  },
 ];
 
 export const BtnList = [
