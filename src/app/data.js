@@ -92,7 +92,7 @@ export const projectsData = [
     name: "FakeAD_Detect",
     description: "Detect fake ads in social media posts",
     date: "2022-08-15",
-    demoLink: "https://github.com/hashthat/FakeAD_Detect",
+    demoLink: "https://hashthat.github.io/FakeAd_App/?page=home",
   },
 ];
 
