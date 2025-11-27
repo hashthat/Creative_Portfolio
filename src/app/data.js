@@ -50,7 +50,7 @@ export const projectsData = [
     name: "Basic_C_Shell",
     description: "A simple C shell implementation",
     date: "2022-07-12",
-    demoLink: "https://github.com/hashthat/Basic_C_Shell",
+    demoLink: "https://github.com/bashthat/basic_C_shell",
   },
   {
     id: 6,
