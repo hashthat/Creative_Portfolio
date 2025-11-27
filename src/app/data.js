@@ -114,13 +114,13 @@ export const BtnList = [
   },
   {
     label: "Resume",
-    link: "https://github.com/hashthat/Resume/raw/main/Resume.pdf",
+    link: process.env.NODE_ENV === 'production' ? '/Creative_Portfolio/resume.pdf' : '/resume.pdf',
     icon: "resume",
     newTab: true,
   },
   {
     label: "MVP",
-    link: "https://github.com/hashthat/Musicians_Hub/raw/main/Musicians_Hub.pdf",
+    link: process.env.NODE_ENV === 'production' ? '/Creative_Portfolio/Musicians_Hub.pdf' : '/Musicians_Hub.pdf',
     icon: "mvp",
     newTab: true,
   }
